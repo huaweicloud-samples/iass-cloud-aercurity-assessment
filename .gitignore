@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# 数据库
+*.sqlite
+*.sqlite3
+*.db
+yunping.db
+
+# 环境变量（含密钥）
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# CodeArts
+.arts/
+.codeartsdoer/
+
+# 日志
+logs/
+*.log
+
+# 上传文件
+uploads/evidence/materials/
+uploads/evidence/evidence_list_*.xlsx
+uploads/evidence/evidence_list.json
+uploads/templates/01/
+uploads/templates/standard/
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+nul
+
+# 前端
+yunping/frontend/node_modules/
+yunping/frontend/dist/
+
+# 测试产物
+证据材料列表样例/
+
+# 敏感配置
+configs/llm_config_*.json

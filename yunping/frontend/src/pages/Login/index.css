@@ -1,0 +1,311 @@
+/* ==================== 登录页面 - 左右分栏布局 ==================== */
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ==================== 左侧视觉区域 ==================== */
+
+.login-visual {
+  position: relative;
+  width: 55%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1c 0%, #0d1b3e 40%, #0a1628 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* 网格背景 */
+.login-visual-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 112, 243, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 112, 243, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.login-visual-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 科技圆环 */
+.tech-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.ring-outer {
+  width: 360px;
+  height: 360px;
+  animation: ring-rotate 20s linear infinite;
+  border-style: dashed;
+  border-color: rgba(0, 212, 255, 0.12);
+}
+
+.ring-middle {
+  width: 260px;
+  height: 260px;
+  animation: ring-rotate 15s linear infinite reverse;
+  border-color: rgba(0, 112, 243, 0.2);
+}
+
+.ring-inner {
+  width: 160px;
+  height: 160px;
+  animation: ring-rotate 10s linear infinite;
+  border-color: rgba(0, 212, 255, 0.25);
+  border-width: 2px;
+}
+
+@keyframes ring-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 中心核心图标 */
+.tech-core {
+  position: relative;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+  animation: core-pulse 3s ease-in-out infinite;
+}
+
+.core-icon {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes core-pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6)); }
+}
+
+/* 光束效果 */
+.light-beam {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.4), transparent);
+  transform-origin: left center;
+}
+
+.beam-1 {
+  width: 300px;
+  top: 50%;
+  right: -50px;
+  transform: rotate(-15deg);
+  animation: beam-flicker 4s ease-in-out infinite;
+}
+
+.beam-2 {
+  width: 250px;
+  top: 45%;
+  right: -30px;
+  transform: rotate(-5deg);
+  animation: beam-flicker 4s ease-in-out infinite 1s;
+}
+
+.beam-3 {
+  width: 200px;
+  top: 55%;
+  right: -20px;
+  transform: rotate(10deg);
+  animation: beam-flicker 4s ease-in-out infinite 2s;
+}
+
+@keyframes beam-flicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+/* 粒子点 */
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(0, 212, 255, 0.6);
+  animation: particle-float 6s ease-in-out infinite;
+}
+
+.p1 { top: 20%; left: 15%; animation-delay: 0s; }
+.p2 { top: 30%; left: 70%; animation-delay: 0.8s; }
+.p3 { top: 60%; left: 25%; animation-delay: 1.6s; }
+.p4 { top: 75%; left: 60%; animation-delay: 2.4s; }
+.p5 { top: 40%; left: 80%; animation-delay: 3.2s; }
+.p6 { top: 85%; left: 40%; animation-delay: 4s; }
+.p7 { top: 15%; left: 50%; animation-delay: 4.8s; }
+.p8 { top: 50%; left: 10%; animation-delay: 5.6s; }
+
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-15px) scale(1.5); opacity: 0.8; }
+}
+
+/* 左下角文字 */
+.login-visual-text {
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
+  z-index: 3;
+}
+
+.visual-text-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+}
+
+.visual-text-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+}
+
+/* ==================== 右侧登录表单区域 ==================== */
+
+.login-form-area {
+  width: 45%;
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 380px;
+  padding: 0 30px;
+}
+
+.login-form-header {
+  margin-bottom: 40px;
+}
+
+.login-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+
+.login-subtitle {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0070f3;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
+}
+
+/* 表单样式 */
+.login-form .login-input {
+  border-radius: 8px;
+  border: 1.5px solid #e0e6ed;
+  transition: all 0.3s ease;
+  height: 46px;
+  font-size: 15px;
+}
+
+.login-form .login-input:hover {
+  border-color: #0070f3;
+}
+
+.login-form .login-input:focus,
+.login-form .login-input.ant-input-affix-wrapper-focused {
+  border-color: #0070f3;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.1);
+}
+
+.login-form .input-icon {
+  color: #0070f3;
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+/* 登录按钮 */
+.login-btn {
+  height: 46px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  background: linear-gradient(135deg, #0070f3 0%, #0050d4 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(0, 112, 243, 0.35) !important;
+  transition: all 0.3s ease !important;
+  letter-spacing: 2px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #0080ff 0%, #0060e0 100%) !important;
+  box-shadow: 0 6px 20px rgba(0, 112, 243, 0.45) !important;
+  transform: translateY(-1px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* ==================== 响应式适配 ==================== */
+
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-visual {
+    width: 100%;
+    min-height: 280px;
+    height: 35vh;
+  }
+
+  .login-form-area {
+    width: 100%;
+    min-height: 65vh;
+  }
+
+  .ring-outer { width: 200px; height: 200px; }
+  .ring-middle { width: 140px; height: 140px; }
+  .ring-inner { width: 90px; height: 90px; }
+  .tech-core { width: 70px; height: 70px; }
+
+  .login-visual-text {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .visual-text-title { font-size: 18px; }
+  .visual-text-sub { font-size: 12px; }
+
+  .login-title { font-size: 22px; }
+  .login-subtitle { font-size: 22px; }
+}
+
+@media (max-width: 480px) {
+  .login-form-wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .login-title { font-size: 20px; }
+  .login-subtitle { font-size: 20px; }
+}
