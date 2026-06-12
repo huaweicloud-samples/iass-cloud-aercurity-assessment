@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Layout, Menu, Select, Typography, Button, Avatar } from 'antd';
-import { DashboardOutlined, AuditOutlined, FileTextOutlined, RobotOutlined, SettingOutlined, LogoutOutlined, FolderOutlined, TeamOutlined, BankOutlined, UserOutlined, DiffOutlined, SecurityScanOutlined, ApiOutlined } from '@ant-design/icons';
+import { DashboardOutlined, AuditOutlined, FileTextOutlined, RobotOutlined, SettingOutlined, LogoutOutlined, FolderOutlined, TeamOutlined, BankOutlined, UserOutlined, DiffOutlined, SecurityScanOutlined, ApiOutlined, BgColorsOutlined } from '@ant-design/icons';
 import ItemDashboard from '../../pages/ItemDashboard';
 import AuditPage from '../../pages/AuditPage';
 import DeclarationCategoryPage from '../../pages/DeclarationCategoryPage';
@@ -10,6 +10,7 @@ import SensitiveMonitorPage from '../../pages/SensitiveMonitorPage';
 import BaseManagePage from '../../pages/BaseManagePage';
 import UserManagePage from '../../pages/UserManagePage';
 import LLMConfigPage from '../../pages/LLMConfigPage';
+import StylePage from '../../pages/StylePage';
 import RiskIdentificationModal from '../../components/RiskIdentificationModal';
 import { useAppStore } from '../../store';
 import { getBases, checkRiskIdentification } from '../../api';
@@ -102,6 +103,7 @@ const AppLayout = () => {
         { key: 'llm-config', icon: <ApiOutlined />, label: '大模型配置' },
       ]
     },
+    { key: 'style', icon: <BgColorsOutlined />, label: '样式' },
   ];
 
   const renderContent = () => {
@@ -118,6 +120,7 @@ const AppLayout = () => {
       case 'base-manage': return <BaseManagePage />;
       case 'user-manage': return <UserManagePage />;
       case 'llm-config': return <LLMConfigPage />;
+      case 'style': return <StylePage />;
       default: return <ItemDashboard />;
     }
   };
